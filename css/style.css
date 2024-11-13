@@ -31,15 +31,18 @@ button {
   appearance: none;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 /* base */
+
 body {
   min-height: 3000px;
 }
 
 body.open {
   overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
 .container {
@@ -53,6 +56,7 @@ body.open {
   position: sticky;
   top: 0;
   z-index: 1;
+  background-color: #ffffff;
 }
 
 .header-inner {
@@ -198,6 +202,10 @@ nav {
 }
 
 /* tab button */
+.tab-menu-wrapper {
+  max-width: 600px;
+}
+
 .tab-button-wrapper {
   display: flex;
   gap: 6px;
