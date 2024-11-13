@@ -1,0 +1,251 @@
+:root {
+  --main-color: hsl(210, 80%, 50%);
+  --header-height: 80px;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+/* base */
+body {
+  min-height: 3000px;
+}
+
+body.open {
+  overflow: hidden;
+}
+
+.container {
+  width: min(94%, 1000px);
+  margin: 0 auto;
+}
+
+/* header */
+.header {
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header-inner {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* nav */
+
+nav {
+  flex: 0 1 40%;
+}
+
+@media screen and (max-width: 592px) {
+  .nav {
+    background-color: var(--main-color);
+    position: fixed;
+    /* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    /* inset: 0 -100% 0 100%; */
+    top: 0;
+    right: -70%;
+    width: 70%;
+    height: 100vh;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  .open .nav {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+.nav-inner {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 592px) {
+  .nav-inner {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 3vw;
+    padding-bottom: 50px;
+    gap: 1.5rem;
+  }
+}
+
+.nav-inner > li > a {
+  text-align: center;
+  display: block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  /* font-weight: 900; */
+}
+
+@media screen and (max-width: 592px) {
+  .nav-inner > li > a {
+    color: #ffffff;
+    text-align: right;
+  }
+}
+
+/* drawer-button */
+.drawer-button-wrapper {
+  display: none;
+}
+
+@media screen and (max-width: 592px) {
+  .drawer-button-wrapper {
+    display: grid;
+    place-content: center;
+  }
+}
+
+.drawer-button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  /* background-color: red; */
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.open .drawer-button {
+  background-color: #fff;
+  border: #fff;
+}
+
+.drawer-button-line {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: block;
+  height: 2px;
+  width: 19px;
+  background-color: currentColor;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.open .drawer-button-line {
+  background-color: transparent;
+}
+
+.drawer-button-line::before,
+.drawer-button-line::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  position: absolute;
+  transition: transform 0.2s ease-in-out, top 0.2s ease-in-out;
+}
+
+.open .drawer-button-line::before,
+.open .drawer-button-line::after {
+  background-color: var(--main-color);
+}
+
+.drawer-button-line::before {
+  top: -5px;
+}
+
+.open .drawer-button-line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.drawer-button-line::after {
+  top: 5px;
+}
+
+.open .drawer-button-line::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* tab button */
+.tab-button-wrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.tab-button {
+  border-width: 2px 2px 0;
+  border-style: solid;
+  border-color: var(--main-color);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 0.3rem 0.5rem;
+}
+
+.active.tab-button {
+  background-color: var(--main-color);
+  color: #ffffff;
+}
+
+.tab-panel-wrapper {
+  position: relative;
+}
+
+.tab-panel {
+  position: absolute;
+  top: 0;
+  border: 2px solid var(--main-color);
+  padding: 0.5rem;
+  opacity: 0;
+  background-color: var(--main-color);
+  color: #ffffff;
+}
+
+.active.tab-panel {
+  opacity: 1;
+}
+
+.visually-hidden {
+  position: fixed !important;
+  top: 0px !important;
+  left: 0px !important;
+  width: 4px !important;
+  height: 4px !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+}

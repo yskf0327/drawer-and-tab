@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ドロワーメニューとタブメニュー</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo"><a href="#">LOGO</a></div>
+        <nav class="nav">
+          <ul class="nav-inner">
+            <li><a href="#">top</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">access</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </nav>
+        <div class="drawer-button-wrapper">
+          <button class="drawer-button" type="button" id="js-drawer-button">
+            <span class="drawer-button-line">
+              <span class="visually-hidden">メニュー開閉</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <ol class="tab-button-wrapper">
+          <li><button class="tab-button active" aria-controls="panel01">Tab1</button></li>
+          <li><button class="tab-button" aria-controls="panel02">Tab2</button></li>
+          <li><button class="tab-button" aria-controls="panel03">Tab3</button></li>
+        </ol>
+        <div class="tab-panel-wrapper">
+          <div class="tab-panel active" id="panel01">
+            <p>panel01</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam laboriosam, nemo eum quo ipsum architecto reprehenderit id illum odio excepturi. Mollitia quisquam itaque odit ipsum placeat quas aliquam nulla laboriosam!</p>
+          </div>
+          <div class="tab-panel" id="panel02">
+            <p>panel02</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam laboriosam, nemo eum quo ipsum architecto reprehenderit id illum odio excepturi. Mollitia quisquam itaque odit ipsum placeat quas aliquam nulla laboriosam!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam laboriosam, nemo eum quo ipsum architecto reprehenderit id illum odio excepturi. Mollitia quisquam itaque odit ipsum placeat quas aliquam nulla laboriosam!</p>
+          </div>
+          <div class="tab-panel" id="panel03">
+            <p>panel03</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam laboriosam, nemo eum quo ipsum architecto reprehenderit id illum odio excepturi. Mollitia quisquam itaque odit ipsum placeat quas aliquam nulla laboriosam!</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat numquam alias odit error! Fugit nihil perferendis obcaecati nemo, fugiat corporis nobis delectus aliquid aut odit totam, dolor doloribus atque quam nesciunt, magni ipsam error quia quis nostrum optio. Nemo et, quam nesciunt omnis voluptas recusandae officiis similique facere accusamus modi, deleniti quis veritatis non minus? Eum error sunt itaque? Optio repudiandae ipsum dolor quod, laborum deleniti magni nam inventore culpa in quisquam ipsa, ad autem sunt officiis facilis nulla, sapiente vel reprehenderit eligendi. Enim voluptates molestiae harum aliquam ab accusantium temporibus esse voluptatibus. Esse facilis, nemo iure cupiditate dignissimos unde voluptatibus ipsa, quidem dolorem, quod cum praesentium doloremque fuga quo repellendus officiis eveniet nostrum neque illum sed sit. Pariatur a explicabo adipisci inventore, quibusdam nam fuga eos quam fugiat facere, iusto tenetur eligendi! Iusto molestiae
+        officia odio fuga facilis modi vitae! Ut pariatur a vitae non alias corrupti rem vel perferendis odit ipsam enim quisquam, repellat temporibus asperiores ipsum fugit quibusdam nam! Rem aliquam tempora similique architecto cum suscipit quam numquam id eaque vitae commodi corporis, soluta ducimus voluptas fuga obcaecati ut, quod minus itaque nulla voluptatem nemo quas ad? Praesentium soluta iusto quaerat hic blanditiis sint molestiae facilis?
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
